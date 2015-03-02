@@ -1,0 +1,28 @@
+//#define _CRT_SECURE_NO_DEPRECATE
+#include<stdio.h>
+
+using namespace std;
+
+int main()
+{
+	freopen("in.txt", "r", stdin);
+	freopen("out.txt", "w", stdout);
+	int number;
+	while (scanf("%d", &number) &&number != 0 )
+	{
+
+		while (number>9)
+		{
+			printf("%d ", number);
+			int temp = 1;
+			do
+			{
+				temp *= number % 10;
+			} while (number /= 10);
+			number = temp;
+		}
+		printf("%d\n", number);
+
+	}
+	return 0;
+}
